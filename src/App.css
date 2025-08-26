@@ -14,18 +14,19 @@
 
 * { box-sizing: border-box; }
 
-html {
-  font-optical-sizing: auto;                 /* enable variable-font optical sizing */
-  height: 100%;
+html { font-optical-sizing: auto; }
+body { margin: 0; padding: 0; font-family: var(--ui-stack); color: #333; }
+
+/* Always paint white and fill the dynamic viewport */
+html, body, #root {
+  background: #fff !important;
+  min-height: 100svh;   /* iOS small viewport (safe for URL bar changes) */
 }
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;                        /* guard against sideways scroll */
-  font-family: var(--ui-stack);
-  color: #333;
+
+@supports not (height: 1svh) {
+  html, body, #root { min-height: 100vh; }  /* fallback */
 }
+
 
 /* ---------- Type ramp ---------- */
 h1 {
