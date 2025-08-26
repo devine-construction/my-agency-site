@@ -506,11 +506,11 @@ html { scroll-behavior: smooth; }
   margin-left: 0;
 }
 
-/* ===== Tool marquee ===== */
+/* ===== Tool marquee (iOS-safe) ===== */
 .tool-marquee {
-  --gap: 2.0rem;
-  --logo-h: 36px;            /* logo height on desktop */
-  --marquee-duration: 28s;   /* can be overridden via inline style */
+  --gap: 2rem;
+  --logo-h: 36px;
+  --marquee-duration: 28s;
 
   position: relative;
   overflow: hidden;
@@ -521,7 +521,7 @@ html { scroll-behavior: smooth; }
   border: 1px solid #eee;
 }
 
-/* gradient edges for a soft fade */
+/* soft edges */
 .tool-marquee::before,
 .tool-marquee::after {
   content: "";
@@ -531,81 +531,64 @@ html { scroll-behavior: smooth; }
   pointer-events: none;
   z-index: 1;
 }
-.tool-marquee::before {
-  left: 0;
-  background: linear-gradient(to right, #fff, rgba(255,255,255,0));
-}
-.tool-marquee::after {
-  right: 0;
-  background: linear-gradient(to left, #fff, rgba(255,255,255,0));
-}
+.tool-marquee::before { left: 0;  background: linear-gradient(to right, #fff, rgba(255,255,255,0)); }
+.tool-marquee::after  { right: 0; background: linear-gradient(to left,  #fff, rgba(255,255,255,0)); }
 
 .tool-track {
-  display: flex;
+  display: inline-flex;            /* important for width: max-content to behave well in Safari */
   gap: var(--gap);
   align-items: center;
-
-  /* Duplicate list is 2x width; translate by 50% for a seamless loop */
   width: max-content;
-  animation: marquee var(--marquee-duration) linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+  animation: marqueeScroll var(--marquee-duration) linear infinite;
 }
 
-/* Pause on hover/focus (desktop) */
-.tool-marquee:hover .tool-track,
-.tool-marquee:focus-within .tool-track { animation-play-state: paused; }
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+@keyframes marqueeScroll {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); }  /* two rows => -50% is seamless */
 }
 
 .tool-item {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
-  gap: .6rem;
-  white-space: nowrap;     /* keep name with icon */
+  justify-content: center;
   padding: .25rem 0;
-  flex: 0 0 auto;          /* don't shrink */
 }
 
-.tool-item img {
+.tool-icon {
   height: var(--logo-h);
   width: auto;
   object-fit: contain;
   display: block;
-  filter: grayscale(100%); /* tasteful, can remove */
-  opacity: .9;
-  transition: filter .2s ease, opacity .2s ease, transform .2s ease;
-}
-.tool-item:hover img { filter: none; opacity: 1; transform: translateY(-1px); }
-
-.tool-name {
-  font: 600 .95rem/1 var(--ui-stack);
-  color: #444;
+  /* iOS/Safari reliability helpers */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
-/* Smaller on phones; fewer visible items ≈ still ~4ish at common widths */
+/* Hover effects only on devices that actually hover */
+@media (hover: hover) and (pointer: fine) {
+  .tool-icon {
+    filter: grayscale(100%);
+    opacity: .9;
+    transition: filter .2s ease, opacity .2s ease, transform .2s ease;
+  }
+  .tool-item:hover .tool-icon {
+    filter: none;
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+}
+
+/* Smaller on phones */
 @media (max-width: 768px) {
   .tool-marquee { --gap: 1.25rem; }
-  .tool-item img { --logo-h: 28px; }
-  .tool-name     { font-size: .9rem; }
+  .tool-icon    { height: 28px; }
 }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .tool-track { animation: none; }
-}
-
-.tool-icon {
-  width: 80px;      /* pick your uniform size */
-  height: 80px;     /* same height */
-  object-fit: contain; /* keeps proportions inside the box */
-  margin: 0 12px;   /* optional spacing */
-}
-
-.tools-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;  /* even spacing */
 }
