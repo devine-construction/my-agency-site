@@ -582,6 +582,34 @@ html { scroll-behavior: smooth; }
   }
 }
 
+/* Always paint the page white (Safari dark-mode would be black otherwise) */
+html, body {
+  background: #fff;
+}
+
+/* Fill the dynamic viewport height so no outer bg peeks through
+   (supports iOS URL bar collapse/expand) */
+html, body {
+  min-height: 100dvh; /* new dynamic viewport on modern Safari */
+}
+
+/* If you prefer widest compatibility: */
+@supports (height: 100svh) {
+  html, body { min-height: 100svh; } /* small viewport units */
+}
+
+/* If you ever have fixed headers/footers and need safe-area padding: */
+@supports (padding: max(0px)) {
+  body {
+    padding-left:  max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    /* Top/bottom only if you place fixed bars into safe areas */
+    /* padding-top:    max(0px, env(safe-area-inset-top));    */
+    /* padding-bottom: max(0px, env(safe-area-inset-bottom)); */
+  }
+}
+
+
 /* Smaller on phones */
 @media (max-width: 768px) {
   .tool-marquee { --gap: 1.25rem; }
