@@ -610,6 +610,48 @@ html, body {
   }
 }
 
+/* Default duration for Chromium/Firefox */
+.tool-marquee { --marquee-duration: 24s; }
+
+/* Safari/iOS: shorter duration + smaller gaps = more motion per second */
+@supports (-webkit-hyphens: none) {
+  .tool-marquee { --marquee-duration: 14s; }
+}
+
+/* Phones (any browser): a touch faster still */
+@media (max-width: 768px) {
+  .tool-marquee { --marquee-duration: 12s; --gap: 1rem; }
+}
+
+/* Make sure the track is GPU-friendly (already good, but reinforce) */
+.tool-track {
+  display: inline-flex;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+
+/* Default duration for Chromium/Firefox */
+.tool-marquee { --marquee-duration: 24s; }
+
+/* Safari/iOS: shorter duration + smaller gaps = more motion per second */
+@supports (-webkit-hyphens: none) {
+  .tool-marquee { --marquee-duration: 14s; }
+}
+
+/* Phones (any browser): a touch faster still */
+@media (max-width: 768px) {
+  .tool-marquee { --marquee-duration: 12s; --gap: 1rem; }
+}
+
+/* Make sure the track is GPU-friendly (already good, but reinforce) */
+.tool-track {
+  display: inline-flex;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+}
+
 
 /* Smaller on phones */
 @media (max-width: 768px) {
