@@ -1,0 +1,74 @@
+/* ---------- page scaffold ---------- */
+.build-page {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.build-page h1 {
+  font: 700 2.5rem/1.2 var(--ui-stack);
+  margin-bottom: 1rem;
+}
+
+.build-page p {
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- form ---------- */
+.build-form {
+  display: grid;                   /* keep grid for easy vertical spacing  */
+  gap: 1.25rem;
+  text-align: left;
+}
+
+/* always a single column; no desktop split  */
+.build-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* stretch every control full-width */
+.build-form input,
+.build-form textarea {
+  width: 100%;                     /* ★ new: 100 % of container */
+  margin-top: 0.35rem;
+  padding: 0.75rem 0.875rem;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.build-form textarea { resize: vertical; }
+
+/* ---------- CTA button ---------- */
+.cta.primary {
+.build-form .cta.primary {
+  width: 100%;
+}
+}
+
+.cta.primary:hover { background: #b30000; }
+
+/* enhance the link */
+.mail-link {
+  font-weight: 700;
+  color: #d00;
+  text-decoration: none;
+  cursor: pointer;     /* looks clickable even without underline */
+}
+
+.mail-link:hover { text-decoration: underline; }
+
+/* copied status */
+.copied-tip {
+  color: #333;      
+  font-weight: 400;
+  margin-left: .25rem;
+  transition: opacity .3s ease;
+}
+
+

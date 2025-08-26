@@ -1,0 +1,61 @@
+.fade-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fade-line {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* fade-in phase */
+.fade-line.fade-in {
+  opacity: 1;
+}
+
+/* fully visible phase—no change needed */
+.fade-line.visible {
+  opacity: 1;
+}
+
+/* fade-out phase */
+.fade-line.fade-out {
+  opacity: 0;
+}
+
+
+
+/* 1. Center both columns along the row */
+.two-column {
+  /* instead of align-items: start; */
+  align-items: center;
+}
+
+/* 2. Make the text-column a flex container so its content can center vertically */
+.text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  
+  /* 3. Bump up the base font size and make it a mid-gray */
+  color: #555;
+  font-size: 1.125rem;  /* ~18px if your base is 16px */
+  line-height: 1.6;
+}
+
+/* 4. Tweak headings if you like */
+.text-column h2 {
+  font-size: 2.25rem; /* ~36px */
+  color: #333;        /* keep the headline dark */
+  margin-bottom: 0.5rem;
+}
+.text-column .subheading {
+  font-size: 1.5rem;  /* ~24px */
+  margin-bottom: 1rem;
+}

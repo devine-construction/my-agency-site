@@ -1,0 +1,39 @@
+/* ----------------------------------------------
+   Discreet footer weather – all grey, centered
+   ---------------------------------------------- */
+.wx-card {
+  margin: 1.5rem auto 1rem;         /* gives a little space above copyright */
+  text-align: center;
+  color: #333;
+  font-family: var(--ui-stack);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.wx-main {
+  font-weight: 600;         /* temp + condition */
+}
+
+.wx-blurb {
+  margin-top: 0.25rem;
+  font-weight: 400;
+  font-size: 0.85rem;
+  text-align: center !important;
+}
+
+/* Loading / error inherit same look */
+.wx-loading,
+.wx-error {
+  text-align: center;
+  color: #333;
+}
+
+.wx-link {
+  color: #d00;           /* brand red */
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;       /* shows the hand */
+}
+
+
+.wx-link:hover { text-decoration: underline; }
