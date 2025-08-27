@@ -32,7 +32,7 @@ function GetBuilding() {
         method="POST"
         data-netlify="true"
         netlify-honeypot="bot-field"
-        action="/thanks" // or remove to stay on /build
+        action="/form-thanks" // or remove to stay on /build
         className="build-form"
       >
         {/* required by Netlify */}
