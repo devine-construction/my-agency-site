@@ -73,7 +73,7 @@ function Home({ items }) {
                 Most businesses struggle with the same things: agencies that overpromise, dashboards nobody checks, and strategies that never connect to results. That's where I come in.
               </p>
               <p>You own the accounts. You see the numbers. You keep the control.</p>
-              <p>Transparent. Efficient. Builf for growth, not bloat.</p>
+              <p>Transparent. Efficient. Built for growth, not bloat.</p>
             </ReadMore>
 
             <div className="signature" aria-hidden>
