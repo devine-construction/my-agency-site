@@ -256,6 +256,7 @@ export default function App() {
         <Route path="/thanks" element={<Thanks />} />
       </Routes>
 
+    <AnalyticsTracker />
       <WeatherWidget />
 
       <footer className="site-footer">
