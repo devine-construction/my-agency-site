@@ -251,7 +251,7 @@ export default function App() {
       <Routes>
         <Route path="/"      element={<Home items={carouselItems} />} />
         <Route path="/build" element={<GetBuilding />} />
-        <Route path="/thanks" element={<thanks />} />
+        <Route path="/thanks" element={<Thanks />} />
       </Routes>
 
       <WeatherWidget />
