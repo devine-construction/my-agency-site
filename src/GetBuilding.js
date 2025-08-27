@@ -24,8 +24,7 @@ export default function GetBuilding() {
     <main className="build-page">
       <h1>Let’s Get Building</h1>
       <p>
-        Tell me where you are and what you’re aiming for. I'll reply within one
-        business day with next-step options or a link to book a discovery call.
+        Let me know your current challenges and goals. I'll reply within one business day with tailored next steps or an invite to book a call.
       </p>
 
       {/* -------- Netlify form -------- */}
