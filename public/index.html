@@ -4,46 +4,57 @@
     <meta charset="utf-8" />
 
     <!-- Page title -->
-    <title>Borkenburg</title>
+    <title>Borkenburg - Marketing & Tech Consulting</title>
 
-      <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH4E8VJSBP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FH4E8VJSBP');
-  </script>
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="Borkenburg - Marketing & Tech Consulting" />
+    <meta name="description" content="Helping businesses grow with clear marketing strategy, paid media, analytics, and web development." />
+
+    <!-- Open Graph (LinkedIn, Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://borkenburg.com.au/" />
+    <meta property="og:title" content="Borkenburg - Marketing & Tech Consulting" />
+    <meta property="og:description" content="Helping businesses grow with clear marketing strategy, paid media, analytics, and web development." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://borkenburg.com.au/" />
+    <meta name="twitter:title" content="Borkenburg - Marketing & Tech Consulting" />
+    <meta name="twitter:description" content="Helping businesses grow with clear marketing strategy, paid media, analytics, and web development." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/og-image.png" />
 
     <!-- Favicons -->
-    <!-- Modern browsers will use the high-res PNG -->
-    <link rel="icon" type="image/png" sizes="512x512" href="%PUBLIC_URL%/512_icon.png" />
-    <!-- Legacy fall-back for older browsers -->
+    <link rel="icon" type="image/png" sizes="512x512" href="%PUBLIC_URL%/icon.png" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="512x512" href="%PUBLIC_URL%/icon.png" />
 
-    <!-- Optional: iOS/Android home-screen icon -->
-    <link rel="apple-touch-icon" sizes="512x512" href="%PUBLIC_URL%/512_icon.png" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH4E8VJSBP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FH4E8VJSBP');
+    </script>
 
     <!-- Meta & manifest -->
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
   </head>
 
   <body>
-<!-- Hidden Netlify form so the build bot registers it -->
-<form name="build-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="hidden" name="form-name" value="build-contact" />
-  <input name="name" />
-  <input name="company" />
-  <input name="email" />
-  <textarea name="message"></textarea>
-</form>
-
+    <!-- Hidden Netlify form so the build bot registers it -->
+    <form name="build-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="build-contact" />
+      <input name="name" />
+      <input name="company" />
+      <input name="email" />
+      <textarea name="message"></textarea>
+    </form>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
