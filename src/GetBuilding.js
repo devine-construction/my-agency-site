@@ -71,12 +71,12 @@ function GetBuilding() {
       <p className="alt-contact">
         Prefer email?&nbsp;
         <a
-          href="mailto:hello@borkenburg.com"
+          href="mailto:hi@borkenburg.com"
           className="mail-link"
           onClick={handleCopy}
           aria-label="Copy email address to clipboard"
         >
-          hello@borkenburg.com
+          hi@borkenburg.com
         </a>
         {copied && <span className="copied-tip"> — Copied</span>}
       </p>
