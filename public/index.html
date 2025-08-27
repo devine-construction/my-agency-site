@@ -25,12 +25,15 @@
   </head>
 
   <body>
-    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="hidden" name="form-name" value="contact" />
+<!-- Hidden Netlify form so the build bot registers it -->
+<form name="build-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="build-contact" />
   <input name="name" />
+  <input name="company" />
   <input name="email" />
   <textarea name="message"></textarea>
 </form>
+
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
