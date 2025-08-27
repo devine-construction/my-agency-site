@@ -160,7 +160,7 @@ function Home({ items }) {
       <section id="why" className="section" aria-labelledby="why-title">
         <h2 id="why-title">Tech, Made Simple</h2>
         <p className="p-wide">
-         Most businesses don't speak in acronyms - and they shouldn't have to. CRM, CRO, CDP, BI...it can sound like alphabet soup. At the end of the day, it all comes down to the same thing: finding customers, keeping them, and growing smarter. I offer hands-on consulting to cut through the complexity, translate the tech into plain English, and deliver solutions you can actually use. Whether it's configuring a database, setting up and optimising your CRM, fixing analytics and tracking, building a website or tech stack, or connecting your POS to your online store - I make it work. Fast, practical, no jargon.
+         Most businesses don't speak in acronyms, and they shouldn't have to. CRM, CRO, CDP, BI… it can all sound like alphabet soup. At the end of the day, it’s about one thing: finding customers, keeping them, and growing smarter. I offer hands-on consulting to cut through the complexity, translate the tech into plain English, and deliver solutions you can actually use. Whether it’s optimising your CRM, fixing analytics and tracking, building a website or tech stack, connecting your POS to your online store, or configuring your database, I make it work. Fast, practical, no jargon.
         </p>
       </section>
 
