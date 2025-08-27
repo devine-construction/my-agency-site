@@ -9,7 +9,7 @@ import GetBuilding    from "./GetBuilding";
 import Thanks         from "./Thanks";
 import WeatherWidget  from "./WeatherWidget";
 import ToolMarquee    from "./ToolMarquee";
-
+import AnalyticsTracker from "./AnalyticsTracker";
 import "./App.css";
 
 /* ---------- Landing-page body ---------- */
@@ -186,7 +186,7 @@ function Home({ items }) {
 
           <div className="card">
             <p className="card-kicker">Obsessed With Results</p>
-            <p>If you're not converting, there's a reason — and I'll find it.</p>
+            <p>If you're not converting, there's a reason, and I'll find it.</p>
           </div>
         </div>
       </section>
@@ -227,6 +227,8 @@ export default function App() {
 
   return (
     <div className="App">
+        <AnalyticsTracker />
+
       <header className="top-bar" role="banner">
         <div className="top-bar-left">
           <a href="#main" className="skip">Skip to content</a>

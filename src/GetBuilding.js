@@ -8,13 +8,13 @@ function GetBuilding() {
   const handleCopy = (e) => {
     e.preventDefault();
     navigator.clipboard
-      .writeText("hello@borkenburg.com")
+      .writeText("hi@borkenburg.com")
       .then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       })
       .catch(() => {
-        window.location = "mailto:hello@borkenburg.com";
+        window.location = "mailto:hi@borkenburg.com";
       });
   };
 
